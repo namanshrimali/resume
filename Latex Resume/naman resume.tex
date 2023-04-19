@@ -25,6 +25,12 @@
 \usepackage[normalem]{ulem} % provides "\ul" (uline) command which will break at line breaks
 
 \usepackage[english]{babel} % provides culturally determined typographical rules for wide range of languages
+
+\usepackage{xcolor}
+
+\usepackage[margin=1in]{geometry}
+
+\usepackage{ragged2e}
 %-----------------------------------------
 
 \input glyphtounicode % converts glyph names to unicode
@@ -77,7 +83,7 @@
 
 \titleformat{\section}
   {\scshape\large}{}
-    {0em}{\color{blue}}[\color{black}\titlerule\vspace{-3.0pt}]
+    {0em}{\textcolor{blue!80!white}}[\color{black}\titlerule\vspace{-3.0pt}]
 %-------------------------------------
 
 
@@ -89,7 +95,7 @@
 \renewcommand{\ULdepth}{2pt}
 %-------------------------------------
 
-
+\newcommand{\link}[2]{\textcolor{blue!70!white}{\uline{\href{#1}{#2}}}}
 %--------CUSTOM COMMANDS--------------
 %\vspace{} defines a vertical space of given size, modifying this in custom commands can help stretch or shrink resume to remove or add content
 
@@ -131,6 +137,14 @@
   \end{tabular*}
 }
 
+\newcommand{\workex}[3]{
+  \item
+  \begin{tabular*}{0.96\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \multicolumn{2}{l}{\textit{\small#3}} \\
+  \end{tabular*}
+}
+
 % resumeQuadHeadingChild renders the second row of resumeQuadHeading, can be used for experience if different roles in the same company need to added
 \newcommand{\resumeQuadHeadingChild}[2]{
   \item
@@ -138,6 +152,9 @@
     \textbf{\small#1} & {\small#2} \\
   \end{tabular*}
 }
+
+
+
 
 % commands to start and end itemization of resumeQuadHeading, lefmargin for left indent of 0.15in for resumeItems
 \newcommand{\resumeHeadingListStart}{
@@ -150,30 +167,29 @@
 %__________________RESUME____________________
 % You can rearrange sections in any order you may prefer
 \begin{document}
-
+\justifying
 %-----------CONTACT DETAILS------------------
 % Make sure all the details are correct, you can add more links in the first row of second column if needed
 
 
 \begin{center}
   \textbf{\Huge \scshape Naman Shrimali} \\ \vspace{1pt}
-  \href{mailto:shrimalinaman@gmail.com}{\uline{shrimalinaman@gmail.com}}
+  \link{mailto:shrimalinaman@gmail.com}{shrimalinaman@gmail.com}
   $|$
-  \href{https://www.linkedin.com/in/namanshrimali/}{\uline{LinkedIn}}
+  \link{https://www.linkedin.com/in/namanshrimali/}{LinkedIn}
   $|$
-  \href{https://github.com/namanshrimali}{\uline{GitHub}}
+  \link{https://github.com/namanshrimali}{GitHub}
   $|$
-  \href{https://namanshrimali.com}{\uline{Portfolio}}
+  \link{https://namanshrimali.com}{Portfolio}
 \end{center}
 
 
 
 %-----------SUMMARY--------------------------
 % Keep this short, simple and straigth to point
-
 \section{Summary}
 \small{
-  A Java Full-Stack Developer with 2+ years of professional experience in designing, developing, and managing robust and scalable applications in BFSI and Retail Industry. }
+  A Java Full-Stack Developer with over 2 years of agile development experience in designing, developing, and managing robust and scalable applications in Banking, Financial and Retail Industry. }
 %--------------------------------------------
 
 \vspace{-0.8\baselineskip}
@@ -185,8 +201,8 @@
   \resumeHeadingListStart{}
     \resumeSectionType{Languages}{:}{Java, Python, TypeScript, JavaScript (ES6), Dart, Ruby, HTML, CSS}
     \resumeSectionType{Frameworks}{:}{Angular, ReactJS, Flutter, Node.js, Spring Framework}
-    \resumeSectionType{Databases}{:}{SQL (PostgreSQL, DB2), NoSQL (MongoDB, Cassandra, HBASE, DynamoDB)}
-    \resumeSectionType{Tools}{:}{Azure, AWS, Git, Docker, Kafka, RabbitMQ, Heroku, Jenkins, Maven, NPM, Tomcat/Nginx, Swagger}
+    \resumeSectionType{Databases}{:}{RDBMS (PostgreSQL, DB2, MySQL, MariaDB), NoSQL (MongoDB, Cassandra, HBASE, DynamoDB)}
+    \resumeSectionType{Tools}{:}{REST, Git, Docker, Kafka, RabbitMQ, Heroku, Jenkins, Maven, NPM, Tomcat/Nginx, Swagger}
   \resumeHeadingListEnd{}
 %--------------------------------------------
 
@@ -199,38 +215,38 @@
 \section{Professional Experience}
 \resumeHeadingListStart{}
 
-  \resumeQuadHeading{Software Development Engineer}{Feb 2023 -- Present}
-  {Amazon Web Services, Seattle, WA}{}
+  \workex{Software Development Engineer, Amazon Web Services, Seattle, WA}{Feb 2023 -- Present}
+  {Worked as backend engineer for Amazon Kinesis Data Streams, a serverless and scalable streaming data service }
     \resumeItemListStart{}
-      \resumeItem{Designed and developed a java-based load generator package that mimics production traffic on Amazon Kinesis, SQS test stacks.}
+      \resumeItem{Generated \textbf{80\% of region's traffic} by creating a distributed load generation module with \textbf{AWS EC2, SQS, S3} using multiple hosts.}
       \resumeItem{Introduced several alarms, triggered when production system usage crosses certain threshold, raising sev-2s to on-call employees}
     \resumeItemListEnd{}
   
-    \resumeQuadHeading{Full Stack Developer Intern}{May 2022 -- Aug 2022}
-    {Credible Labs, Durham, NC}{}
+    \workex{Full Stack Developer Intern, Credible Labs, Durham, NC}{May 2022 -- Aug 2022}
+    {\textit{Credible’s online marketplace offers consumers to compare and refinance loans, mortgages, and other financial products from lenders.}}
       \resumeItemListStart{}
-        \resumeItem{Introduced design patterns and configuration structuring on Ruby on Rails service that reduced lender onboarding time to 7 days.}
-        \resumeItem{Created a custom ReactJS theming component which conditionally generated CSS variables to be read by all components, eliminating
+        \resumeItem{Reduced lender onboarding time to \textbf{7 days} by streamlining codebase with \textbf{design patterns} and simple yaml configurations.}
+        \resumeItem{Introduced UI consistency by creating a custom \textbf{ReactJS} theming component which conditionally generated CSS variables to be read by all components, eliminating
         the need to create a new stylesheet or class designation for every theme.}
       \resumeItemListEnd{}
 
-    \resumeQuadHeading{Part Time Research Assistant}{Jan 2022 -- Dec 2022}
-    {North Carolina State University, Raleigh, NC}{}
+    \workex{Part Time Research Assistant, North Carolina State University, Raleigh, NC}{Jan 2022 -- Dec 2022}
+    {\textit{Assisting research focused on improving Peer Assessment System - \link{https://github.com/expertiza/expertiza}{Expertiza (Open Source)}, while officially maintaining the system.}}
       \resumeItemListStart{}
-        \resumeItem{Transformed peer reviewing by transitioning from generalized to Role-Based Reviewing, allowing role-specific peer evaluation.}
-        \resumeItem{Increased performance by 14\% and modernized an 8-year-old system by migrating to Rails 6, Ruby 3 with no functionality affected.}
-        \resumeItem{Progressively refactored and mentored 32 open-source contributors, bumping test coverage by 29\% and code quality by 34\%.}
+        \resumeItem{Transformed peer reviewing by transitioning from generalized to \link{https://github.com/expertiza/expertiza/pull/2137}{Role-Based Reviewing}, allowing role-specific peer evaluation.}
+        \resumeItem{Boosted performance by \textbf{14\%} \& modernized an 8-year-old system by \textbf{migrating to Rails 6, Ruby 3} with no functionality affected.}
+        \resumeItem{Improved test coverage by \textbf{29\%} and code quality by \textbf{34\%} by progressively refactoring and \textbf{mentoring 32 open-source contributors}.}
       \resumeItemListEnd{}
 
-  \resumeQuadHeading{Full Stack Developer}{Nov 2019 -- Jul 2021}
-  {IBM India Private Limited, Hyderabad, India}{}
+  \workex{Full Stack Developer, IBM India Pvt Ltd, Hyderabad, India}{Nov 2019 -- Jul 2021}
+  {Created "Schedule and Save" feature for Albertsons (US) and worked for "Cards and Payments" feature for Westpac (AU)}
     \resumeItemListStart{}
-      \resumeItem{Built reusable components on Angular and RESTful Microservices on Spring Reactive for asynchronous order transactions for Albertsons Companies, Inc - Schedule and Save.}
-      \resumeItem{Ensured Test-Driven Development (TDD) with 90\%+ test coverage by developing automated component and integration testing
-      framework built on JUnit5, Mockito, MockWebServer and SonarQube, maintained technical documentation for the same.}
-      \resumeItem{Designed and implemented automated error handling and retry mechanism on transient system failures, achieving 95\% service
-      availability and curbed the service error rate to less than 2\%.}
-      \resumeItem{Achieved 13\% reduction in service response time by introducing cache replication and persistence with EHCache and Redis.}
+      \resumeItem{Built reusable components on \textbf{Angular} and \textbf{RESTful Microservices} on \textbf{Spring Reactive} for asynchronous order transactions}
+      \resumeItem{Ensured \textbf{Test-Driven Development (TDD)}  with 90\%+ test coverage by developing automated unit, component and integration testing
+      framework built on \textbf{JUnit5}, \textbf{Mockito}, \textbf{MockWebServer} and \textbf{SonarQube}, maintained technical documentation as well.}
+      \resumeItem{Designed and implemented \textbf{automated error handling and retry mechanism} on transient system failures, achieving \textbf{95\% service
+      availability} and curbed the service error rate to less than 2\%.}
+      \resumeItem{Achieved \textbf{13\% reduction} in service response time by introducing cache replication and persistence with \textbf{EHCache and Redis}.}
       \resumeItemListEnd{}
 \resumeHeadingListEnd{}
 %---------------------------------------------
@@ -243,15 +259,15 @@
 
 \section{Personal Projects}
   \resumeHeadingListStart{}
-    \resumeTrioHeading{\href{https://spryly.namanshrimali.com}{\uline{Spryly}}}{Open-source work management web app with live Kanban board for team collaboration}{Jun 2021}
+    \resumeTrioHeading{\href{https://spryly.namanshrimali.com}{\uline{Spryly}}}{}{Jun 2021 -- Jul 2021}
       \resumeItemListStart{}
-        \resumeItem{Developed mobile-friendly web-app in Angular, NPM Packages, Redux for state management with 80\% coverage with Karma tests.}
-        \resumeItem{Built microservices on Spring Boot, NodeJS, used RabbitMQ for asynchronous messaging, PostgreSQL, DynamoDB for databases.}
-        \resumeItem{Secured services with Spring Security, Google OAuth2, JWT integrated on Spring API Gateway, load balanced with Netflix Ribbon.}
-        \resumeItem{Containerized services using Docker, deployed application on AWS EC2, automating entire deployment process using Gitlab CI/CD.}
+        \resumeItem{Developed an \textbf{adaptive} and \textbf{responsive} open-source work management web-app on \textbf{Angular}, \textbf{NPM Packages}, \textbf{Redux}, with live Kanban board for team collaboration using \textbf{Web sockets}.}
+        \resumeItem{Built \textbf{Spring Boot, NodeJS} microservices, used \textbf{RabbitMQ} for asynchronous messaging, \textbf{PostgreSQL, DynamoDB} for databases.}
+        \resumeItem{Secured with \textbf{Spring Security, Google OAuth2}, and \textbf{JWT} integrated on \textbf{Spring API Gateway}, load balanced with \textbf{Netflix Ribbon}.}
+        \resumeItem{Containerized services using \textbf{Docker}, deployed application on \textbf{AWS EC2}, automating deployment process with \textbf{Gitlab CI/CD}.}
       \resumeItemListEnd{}
 
-      \resumeTrioHeading{\uline{MoneyMoney}}{}{Mar 2023 -- Present}
+      \resumeTrioHeading{\uline{Timebox}}{}{Apr 2023 -- Present}
       \resumeItemListStart{}
         \resumeItem{A mobile application that divides long term and short-term goals into daily tasks, schedules them and syncs
         with google calendar. Built with Flutter, Dart, Spring Reactive, deployed on AWS Elastic BeanStalk.}
@@ -288,8 +304,11 @@
 
 \section{Certifications}
   \resumeItemListStart{}
-    \resumeItem{\href{https://www.credly.com/badges/d3401e8a-2286-4dec-ac9c-c0144dca670b/public_url}{\uline{Microsoft Certified: Azure Fundamentals}}}
-    \resumeItem{\href{https://www.coursera.org/account/accomplishments/verify/HEEDDVMWJ4LB}{\uline{Deep Learning Specialization - deeplearning.ai}}}
+    \resumeItem{
+      Microsoft Certified: Azure Fundamentals (\link{https://www.credly.com/badges/d3401e8a-2286-4dec-ac9c-c0144dca670b/public_url}{Badge})}
+
+
+    \resumeItem{Deep Learning Specialization - deeplearning.ai (\link{https://www.coursera.org/account/accomplishments/verify/HEEDDVMWJ4LB}{Badge})}
   \resumeItemListEnd{}
 %--------------------------------------------
 
