@@ -189,7 +189,7 @@
 % Keep this short, simple and straigth to point
 \section{Summary}
 \small{
-  A Java Full-Stack Developer with over 2 years of agile development experience in designing, developing, and managing robust and scalable applications in Banking, Financial and Retail Industry. }
+  Software Development Engineer at AWS specializing in building high-performance, highly available distributed systems. Proven track record of driving large-scale improvements in system efficiency and durability through innovations in load balancing and replication, while actively mentoring engineers and raising the bar on design and operational excellence.}
 %--------------------------------------------
 
 \vspace{-0.8\baselineskip}
@@ -202,7 +202,7 @@
     \resumeSectionType{Languages}{:}{Java, Python, TypeScript, JavaScript (ES6), Dart, Ruby, HTML, CSS}
     \resumeSectionType{Frameworks}{:}{Angular, ReactJS, Flutter, Node.js, Spring Framework}
     \resumeSectionType{Databases}{:}{RDBMS (PostgreSQL, DB2, MySQL, MariaDB), NoSQL (MongoDB, Cassandra, HBASE, DynamoDB)}
-    \resumeSectionType{Tools}{:}{REST, Git, Docker, Kafka, RabbitMQ, Heroku, Jenkins, Maven, NPM, Tomcat/Nginx, Swagger}
+    \resumeSectionType{Tools}{:}{REST, GraphQL, Git, Docker, Kafka, RabbitMQ, Heroku, Jenkins, Maven, NPM, Tomcat/Nginx, Swagger}
   \resumeHeadingListEnd{}
 %--------------------------------------------
 
@@ -215,17 +215,20 @@
 \section{Professional Experience}
 \resumeHeadingListStart{}
 
-  \workex{Software Development Engineer, Amazon Web Services, Seattle, WA}{Feb 2023 -- Present}
-  {Worked as backend engineer for Amazon Kinesis Data Streams, a serverless and scalable streaming data service }
+  \workex{Software Development Engineer II, Amazon Web Services, Seattle, WA}{Feb 2023 -- Present}
+  {Worked as distributed systems engineer at Amazon Kinesis Data Streams (KDS), a serverless and scalable streaming data service }
     \resumeItemListStart{}
-      \resumeItem{Generated \textbf{80\% of region's traffic} by creating a distributed load generation module with \textbf{AWS EC2, SQS, S3} using multiple hosts.}
-      \resumeItem{Introduced several alarms, triggered when production system usage crosses certain threshold, raising sev-2s to on-call employees}
+      \resumeItem{Eliminated \textbf{100\%} durability-related production incidents by designing, implementing and deploying a fail-safe in KDS' chain replication system to terminate the head node when it becomes the only surviving replica, preventing unrecoverable acknowledgments.}
+      \resumeItem{Improved system availability to \textbf{99.995\%} and achieved \textbf{\$1M+ in annual EC2 cost savings} by implementing the First Fit Decreasing bin packing algorithm to balance Transactions Per Second (TPS) across hosts. This reduced TPS standard deviation from \textbf{3000 to 299}, improved \textbf{p90 CPU utilization}, and enabled a significant reduction in fleet size.}
+      \resumeItem{Designed and implemented extensible load balancer architecture using \textbf{abstract factory pattern}, enabling seamless integration of new algorithms and improving system resilience during AZ failures}
+      \resumeItem{Developed comprehensive testing framework for load balancer, including 24-hour production traffic simulation, resulting in successful deployment with zero incidents}
     \resumeItemListEnd{}
   
     \workex{Full Stack Developer Intern, Credible Labs, Durham, NC}{May 2022 -- Aug 2022}
-    {\textit{Credible’s online marketplace offers consumers to compare and refinance loans, mortgages, and other financial products from lenders.}}
+    {\textit{Credible's online marketplace offers consumers to compare and refinance loans, mortgages, and other financial products from lenders.}}
       \resumeItemListStart{}
-        \resumeItem{Reduced lender onboarding time to \textbf{7 days} by streamlining codebase with \textbf{design patterns} and simple yaml configurations.}
+        \resumeItem{Reduced lender onboarding time to 7 days by streamlining \textbf{rails} codebase with \textbf{design patterns} and simple yaml configurations.}
+        \resumeItem{Reduced total request number needed to retrieve data by \textbf{3\%} by migrating microservices from \textbf{REST} to \textbf{GraphQL}.}
         \resumeItem{Introduced UI consistency by creating a custom \textbf{ReactJS} theming component which conditionally generated CSS variables to be read by all components, eliminating
         the need to create a new stylesheet or class designation for every theme.}
       \resumeItemListEnd{}
@@ -241,7 +244,7 @@
   \workex{Full Stack Developer, IBM India Pvt Ltd, Hyderabad, India}{Nov 2019 -- Jul 2021}
   {Created "Schedule and Save" feature for Albertsons (US) and worked for "Cards and Payments" feature for Westpac (AU)}
     \resumeItemListStart{}
-      \resumeItem{Built reusable components on \textbf{Angular} and \textbf{RESTful Microservices} on \textbf{Spring Reactive} for asynchronous order transactions}
+      \resumeItem{Built reusable components on \textbf{Angular} and \textbf{REST largescale Microservices} on \textbf{Spring Reactive} for async order transactions}
       \resumeItem{Ensured \textbf{Test-Driven Development (TDD)}  with 90\%+ test coverage by developing automated unit, component and integration testing
       framework built on \textbf{JUnit5}, \textbf{Mockito}, \textbf{MockWebServer} and \textbf{SonarQube}, maintained technical documentation as well.}
       \resumeItem{Designed and implemented \textbf{automated error handling and retry mechanism} on transient system failures, achieving \textbf{95\% service
@@ -259,24 +262,22 @@
 
 \section{Personal Projects}
   \resumeHeadingListStart{}
+  \resumeTrioHeading{\href{https://merrymakin.com}{\uline{MerryMakin}}}{}{Apr 2025 -- Present}
+  \resumeItemListStart{}
+    \resumeItem{MerryMakin is an app that lets you create and share fun, modern invites for any occasion. You can customize the design, send updates, and share photos with your community. Built with Flutter, Dart, Spring Reactive, dockerized and deployed on AWS EC2.}
+  \resumeItemListEnd{}
+
+  \resumeTrioHeading{\href{https://leetrecur.com}{\uline{Leetrecur}}}{}{Feb 2022}
+  \resumeItemListStart{}
+    \resumeItem{A Chrome Extension (5 stars, 650+ active users) that provides automated tracking for LeetCode
+    submissions and schedules revision based on user's proficiency. Built with ReactJS, TypeScript, jQuery.}
+  \resumeItemListEnd{}
     \resumeTrioHeading{\href{https://spryly.namanshrimali.com}{\uline{Spryly}}}{}{Jun 2021 -- Jul 2021}
       \resumeItemListStart{}
         \resumeItem{Developed an \textbf{adaptive} and \textbf{responsive} open-source work management web-app on \textbf{Angular}, \textbf{NPM Packages}, \textbf{Redux}, with live Kanban board for team collaboration using \textbf{Web sockets}.}
         \resumeItem{Built \textbf{Spring Boot, NodeJS} microservices, used \textbf{RabbitMQ} for asynchronous messaging, \textbf{PostgreSQL, DynamoDB} for databases.}
         \resumeItem{Secured with \textbf{Spring Security, Google OAuth2}, and \textbf{JWT} integrated on \textbf{Spring API Gateway}, load balanced with \textbf{Netflix Ribbon}.}
         \resumeItem{Containerized services using \textbf{Docker}, deployed application on \textbf{AWS EC2}, automating deployment process with \textbf{Gitlab CI/CD}.}
-      \resumeItemListEnd{}
-
-      \resumeTrioHeading{\uline{Timebox}}{}{Apr 2023 -- Present}
-      \resumeItemListStart{}
-        \resumeItem{A mobile application that divides long term and short-term goals into daily tasks, schedules them and syncs
-        with google calendar. Built with Flutter, Dart, Spring Reactive, deployed on AWS Elastic BeanStalk.}
-      \resumeItemListEnd{}
-
-      \resumeTrioHeading{\href{https://leetrecur.com}{\uline{Leetrecur}}}{}{Feb 2022}
-      \resumeItemListStart{}
-        \resumeItem{A Chrome Extension (5 stars, 500+ active users) that provides automated tracking for LeetCode
-        submissions and schedules revision based on user’s proficiency. Built with ReactJS, TypeScript, jQuery.}
       \resumeItemListEnd{}
   \resumeHeadingListEnd{}
 %--------------------------------------------
